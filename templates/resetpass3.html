@@ -1,0 +1,38 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'resetpass3.css' %}">
+    <title>Reset Password</title>
+</head>
+<body>
+    <div class="navbar">
+	<a href="/">Home</a>
+	<a href="{% url 'about' %}">About</a>
+	<a href="">Banking</a>
+	<a href="">Finance</a>
+    <a href="{% url 'ourteam' %}">Our Team</a>
+    <a href="{% url 'userlogin' %}" class="right">Login/Signup</a>
+    </div>
+
+
+    <div class="container">
+        <p>Enter new password</p>
+        <form method="post">
+            {% csrf_token %}
+            {{form}}<br><br>
+           <input type="submit" value="Update Password">
+            {{ form.errors }}
+        </form>
+    </div>
+
+    <script>
+        var form_fields =document.getElementsByTagName('input')
+        form_fields[1].placeholder='Password';
+        form_fields[2].placeholder='Confirm Password';
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'Home.css' %}">
+    <link rel="stylesheet" href="{% static 'all.css'%}">
+    <script defer src="{% static 'all.js'%}"></script>
+    <title>Home Page</title>
+    <style>
+        .navbar .hello{
+            position:absolute;
+            top:23px;
+            right:100px;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+	<a href="/logouthome">Home</a>
+	<a href="{% url 'logoutabout' %}">About</a>
+    <div class="dropdown">
+    <button class="dropbtn">Banking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'transactions:status' %}">My Account</a>
+      <a href="{% url 'transactions:transfer' %}">Make Transaction</a>
+      <a href="{% url 'transactions:report' %}">My Transactions</a>
+    </div>
+  </div>
+        <div class="dropdown">
+    <button class="dropbtn">Finance
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'finance:loans' %}">My Loans</a>
+      <a href="{% url 'finance:loanform' %}">Apply for a Loan</a>
+    </div>
+  </div>
+
+    <a href="{% url 'logoutteam' %}">Our Team</a>
+    <span class="hello">Welcome, {{ username }}</span>
+	<a href="{% url 'userlogout' %}" class="right">Logout</a>
+  </div>
+
+  <div class="heading">
+      <p><u>IP Online Banking and Finance Services</u></p>
+  </div>
+
+    <div class="container">
+        <h3>&nbsp&nbsp&nbsp&nbsp&nbspAbout IP </h3>
+        <ul class="a">
+        <p>IP Bank is a leading global investment bank with a strong and profitable private clients franchise</p>
+        <p>IP Bank offers a diverse range of banking services to customers through a growing branch.</p>
+        <p>IP Bank offers a wide gamut of commercial and transactional banking services to businesses and organizations of all sizes.</p>
+        <p> Our services include working finance, transactional services and cash management.</p>
+        <p>Under our treasury services, we help businesses generate better returns on their funds and manage financial risk.</p>
+        </ul>
+    </div>
+
+    <div class="container2">
+        <h3>&nbsp&nbsp&nbsp&nbsp&nbspServices IP provide</h3>
+        <ul>
+            <p>IP uses your bank account number to login and use the services of online IP.</p>
+            <p>IP provides the facility of fund transfer.</p>
+            <p>IP always maintains the record of your previous transactions.</p>
+            <p>IP provides the chance applying for various loans.</p>
+            <p>These include home loan, car loan ,two wheeler loan, education loan, etc.</p>
+        </ul>
+        <img class="service-1" src="{% static 'slideshow-2.jpg' %}">
+        <img class="service-2" src="{% static 'serviceimg-1.jpg!d' %}">
+        <img class="service-3" src="{% static 'serviceimg-2.jpg' %}">
+    </div>
+
+    <div class="images">
+        <img class="image-1" src="{% static 'slideshow-1.jpg' %}">
+        <img class="image-2" src="{% static 'slideshow-4.jpg' %}">
+        <img class="image-3" src="{% static 'slideshow-3.jpg' %}">
+        <img class="image-4" src="{% static 'slideshow-5.jpg' %}">
+    </div>
+
+    <div class="footer">
+        <div class="left">
+            <h1>&nbsp&nbsp&nbsp&nbsp<span>IP</span> Bank</h1>
+            <ul>
+                <p>&nbsp&nbsp&nbsp&nbspFor any kind of queries and problems you face.</p>
+                <p>&nbsp&nbsp&nbsp&nbspPlease Contact,</p>
+                &nbsp&nbsp&nbsp&nbsp<span><i class="fas fa-envelope"></i></span> &nbsp; rathnasai@gmail.com
+                &nbsp&nbsp<span><i class="fa fa-phone"></i></span> &nbsp;  913-325-5566
+                <p>&nbsp&nbsp&nbsp&nbspFollow us on:</p>
+                &nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fab fa-facebook-square"></i></a>
+				&nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fab fa-instagram"></i></a>
+				&nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fab fa-twitter"></i></a>
+				&nbsp&nbsp&nbsp&nbsp<a href="#"><i class="fab fa-youtube"></i></a>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Quick Links</h2>
+            <ul>
+				  <a href="/logoutabout"><li>About</li></a><br>
+				  <a href="{% url 'transactions:status' %}"><li>Banking</li></a><br>
+				  <a href="{% url 'finance:loans' %}"><li>Finance</li></a><br>
+                  <a href="/logoutteam"><li>Our Team</li></a><br>
+                  <a href="/userlogout"><li>Logout</li></a>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

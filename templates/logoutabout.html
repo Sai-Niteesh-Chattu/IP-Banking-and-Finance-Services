@@ -1,0 +1,80 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <title>About IP</title>
+</head>
+<body>
+    <div class="navbar">
+	<a href="/logouthome">Home</a>
+	<a href="{% url 'logoutabout' %}">About</a>
+    <div class="dropdown">
+    <button class="dropbtn">Banking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'transactions:status' %}">My Account</a>
+      <a href="{% url 'transactions:transfer' %}">Make Transaction</a>
+      <a href="{% url 'transactions:report' %}">My Transactions</a>
+    </div>
+  </div>
+        <div class="dropdown">
+    <button class="dropbtn">Finance
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'finance:loans' %}">My Loans</a>
+      <a href="{% url 'finance:loanform' %}">Apply for a Loan</a>
+    </div>
+  </div>
+
+    <a href="{% url 'logoutteam' %}">Our Team</a>
+	<a href="{% url 'userlogout' %}" class="right">Logout</a>
+  </div>
+    <div class="container">
+        <h3>&nbsp&nbsp&nbsp&nbsp&nbspAbout IP </h3>
+        <ul class="a">
+        <p>IP Bank is a leading global investment bank with a strong and profitable private clients franchise</p>
+        <p>IP Bank offers a diverse range of banking services to customers through a growing branch.</p>
+        <p>IP Bank offers a wide gamut of commercial and transactional banking services to businesses and organizations of all sizes.</p>
+        <p> Our services include working finance, transactional services and cash management.</p>
+        <p>Under our treasury services, we help businesses generate better returns on their funds and manage financial risk.</p>
+        <p>IP Bank is a young and dynamic bank, with a youthful and enthusiastic team determined to accomplish the vision of becoming a world-class Indian bank.</p>
+        <p>Our business philosophy is based on five core values</p>
+        <p>- Operational Excellence<br>- Customer Focus<br>- Product Leadership<br>- People and Sustainability.</p>
+        <p>We believe that the ultimate identity and success of our bank will reside in the exceptional quality of our people and their extraordinary efforts.</p>
+        </ul>
+    </div>
+
+    <div class="container2">
+        <h3>&nbsp&nbsp&nbsp&nbsp&nbspCOVID Safety and COVID Restrictions of IP</h3>
+        <h3>&nbsp&nbsp&nbspCause</h3>
+        <ul>
+            <p>According to the CDC, the virus is thought to be spread mainly from person-to-person. This means it may spread between people who are in close contact with one another (within about 6 feet), or through respiratory droplets when an infected person coughs or sneezes. These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs. COVID-19 may be spread by people who are not showing symptoms.</p>
+            <p>The CDC also reports that it may be possible for someone to get COVID-19 by touching a surface or object with the virus on it, and then touching their own mouth, nose, or possibly their eyes, but this is not thought to be the main way the virus spreads.</p>
+        </ul>
+        <h3>&nbsp&nbsp&nbspPrecautions</h3>
+        <ul>
+            <p>Wash your hands often with soap and water for at least 20 seconds, especially after being in a public place, or after blowing your nose, coughing or sneezing.</p>
+            <p>Avoid touching your eyes, nose and mouth with unwashed hands.</p>
+            <p>Avoid close contact with people who are sick, and practice social distancing by keeping at least 6 feet away from others if you must go out in public.</p>
+            <p>Wear a cloth face covering to cover your mouth and nose when around others and when you must go out in public.</p>
+        </ul>
+    </div>
+
+    <div class="container3">
+        <h3>&nbsp&nbsp&nbsp&nbsp&nbspIMPORTANT NOTE</h3>
+        <ul>
+            <p>
+                Due to the on going COVID crisis our online services will be slowed temporarily. If you face any technical problem please wait for a short period of time until the errors were resolved.
+            </p>
+        </ul>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'loanform.css' %}">
+    <title>Loan Application</title>
+
+</head>
+<body>
+
+    <div class="navbar">
+	<a href="/logouthome">Home</a>
+	<a href="{% url 'logoutabout' %}">About</a>
+    <div class="dropdown">
+    <button class="dropbtn">Banking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'transactions:status' %}">My Account</a>
+      <a href="{% url 'transactions:transfer' %}">Make Transaction</a>
+      <a href="{% url 'transactions:report' %}">My Transactions</a>
+    </div>
+  </div>
+        <div class="dropdown">
+    <button class="dropbtn">Finance
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'finance:loans' %}">My Loans</a>
+      <a href="{% url 'finance:loanform' %}">Apply for a Loan</a>
+    </div>
+  </div>
+
+    <a href="{% url 'logoutteam' %}">Our Team</a>
+	<a href="{% url 'userlogout' %}" class="right">Logout</a>
+  </div>
+
+    <div class="container">
+        <form method = "post" action = "/finance/loanform/">
+            {% csrf_token %}
+            <p>Loan Request</p>
+            <input class="one" type="text" name="fname" placeholder="Firstname" required autofocus/><br/><br />
+            <input class="two" type="text" name="lname" placeholder="Lastname" required/><br /><br />
+            <input class="three" type="email" name="mail" placeholder="Email" required /><br/><br />
+            <input class="four" type="number" name="loanamt" placeholder="Loan Amount" required/><br /><br />
+            <input class="five" type="number" name="income" placeholder="Annual Income" required /><br/><br />
+
+           <select class="spec" id="LoanType" name="type">
+                    <option value="1" selected>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Loan Type</option>
+                    <option value="Home Loan" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Home Loan</option>
+                    <option value="Gold Loan" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Gold Loan</option>
+                    <option value="Education Loan" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Education Loan</option>
+                    <option value="Car Loan" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Car Loan</option>
+                </select><br><br>
+
+
+            <input class="six" type="number" name="time" placeholder="Duration(years)" pattern="[0-1]{1}[0-9]{1}" title="Max duration is 20 years" required /><br/><br />
+            <input class="seven" type="text" name="phno" placeholder="Phone Number" pattern="[0-9]{10}" title="Phone number must be of 10 digits" required/><br /><br />
+            <input class="eight" type="text" name="job" placeholder="Occupation" pattern="[A-Za-z]{8,}" title="Occupation must use alphabets" required /><br/><br />
+
+<!--            <input type="text" name="intrest" id="favourite" placeholder="Intrest" required/><br /><br />-->
+<!--            <input type="text" name="maxloan" id="ripe" placeholder="Max Loan" required /><br/><br />-->
+
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</body>
+</html>

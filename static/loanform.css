@@ -1,0 +1,168 @@
+.navbar {
+    overflow: hidden;
+    background-color: green;
+}
+
+  /* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+  /* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+  /* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropdown:hover .dropbtn{
+   background-color: #ddd;
+    color: black;
+}
+
+
+.navbar .dropdown .dropdown-content{
+    position:absolute;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     background-color: #f9f9f9;
+     z-index: 1;
+     display: none;
+}
+
+.dropdown-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover{
+   background-color: #ddd;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.container{
+    background: yellow;
+    height:520px;
+    width:900px;
+    color:black;
+    position:absolute;
+    top:120px;
+    left:300px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align:center;
+}
+.container p{
+    text-align:center;
+    font-size:1.8em;
+}
+input{
+    width: 260px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline-style:none ;
+    margin-bottom:10px;
+}
+input[type=submit]
+{
+   border: none;
+   width: 200px;
+   background: Orange;
+   color: #000;
+   font-size: 19px;
+   line-height: 25px;
+   padding: 10px 0;
+   border-radius: 15px;
+   cursor: pointer;
+}
+input[type=submit]:hover
+{
+    color: #fff;
+    background-color: black;
+}
+
+.container .one{
+    position:absolute;
+    left:70px;
+}
+.container .two{
+    position:absolute;
+    right:80px;
+    top:90px;
+}
+.container .three{
+    position:absolute;
+    left:70px;
+}
+.container .four{
+    position:absolute;
+    right:80px;
+    top:162px;
+}
+.container .five{
+    position:absolute;
+    left:70px;
+}
+.container .spec{
+    width: 260px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 5px;
+    font-size: 19px;
+    font-weight: 200px;
+    padding: 10px 0;
+    transition: border 0.5s;
+    outline-style:none ;
+    margin-bottom:10px;
+    position:absolute;
+    right:80px;
+    top:235px;
+}
+
+.container .six{
+    position:absolute;
+    left:70px;
+}
+
+.container .seven{
+    position:absolute;
+    right:80px;
+    top:308px;
+}
+

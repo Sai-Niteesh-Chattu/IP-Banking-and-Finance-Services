@@ -1,0 +1,85 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'ourteam.css' %}">
+    <link rel="stylesheet" href="{% static 'all.css'%}">
+    <script defer src="{% static 'all.js'%}"></script>
+    <title>IP Developer Team</title>
+</head>
+<body>
+    <div class="navbar">
+	<a href="/logouthome">Home</a>
+	<a href="{% url 'logoutabout' %}">About</a>
+    <div class="dropdown">
+    <button class="dropbtn">Banking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'transactions:status' %}">My Account</a>
+      <a href="{% url 'transactions:transfer' %}">Make Transaction</a>
+      <a href="{% url 'transactions:report' %}">My Transactions</a>
+    </div>
+  </div>
+        <div class="dropdown">
+    <button class="dropbtn">Finance
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'finance:loans' %}">My Loans</a>
+      <a href="{% url 'finance:loanform' %}">Apply for a Loan</a>
+    </div>
+  </div>
+
+    <a href="{% url 'logoutteam' %}">Our Team</a>
+	<a href="{% url 'userlogout' %}" class="right">Logout</a>
+  </div>
+
+    <div class="dev-1">
+        <p class="name-1">KOMMURU KARTHIK</p>
+        <div class="overlay">
+            <div class="text">
+                <p>Team Member</p>
+                <p>Developer</p>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dev-2">
+        <p class="name-2">K RATHNA SAI</p>
+        <div class="overlay-2">
+            <div class="text-2">
+                <p>Team Leader</p>
+                <p>Developer/Maintainer</p>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="dev-3">
+        <p class="name-3">CH SAI NITEESH</p>
+        <div class="overlay-3">
+            <div class="text-3">
+                <p>Team Member</p>
+                <p>Developer</p>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+				<a href="#"><i class="fab fa-instagram"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

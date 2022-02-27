@@ -1,0 +1,55 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static 'status.css' %}" rel="stylesheet">
+    <title>IP Status</title>
+</head>
+<body>
+   <div class="navbar">
+	<a href="/logouthome">Home</a>
+	<a href="{% url 'logoutabout' %}">About</a>
+    <div class="dropdown">
+    <button class="dropbtn">Banking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'transactions:status' %}">My Account</a>
+      <a href="{% url 'transactions:transfer' %}">Make Transaction</a>
+      <a href="{% url 'transactions:report' %}">My Transactions</a>
+    </div>
+  </div>
+        <div class="dropdown">
+    <button class="dropbtn">Finance
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="{% url 'finance:loans' %}">My Loans</a>
+      <a href="{% url 'finance:loanform' %}">Apply for a Loan</a>
+    </div>
+  </div>
+
+    <a href="{% url 'logoutteam' %}">Our Team</a>
+	<a href="{% url 'userlogout' %}" class="right">Logout</a>
+  </div>
+
+    <div class="container">
+        <p>Details</p>
+        <div class="one">
+            <span class="uname"> Username</span>
+            {{ curr_user.username }}<br>
+        </div>
+        <div class="two">
+            <span class="num">Account Number</span>
+            {{ curr_user.account_no }}<br>
+        </div>
+        <div class="three">
+            <span class="bal">Balance</span>
+            {{ curr_user.balance }}<br>
+        </div>
+    </div>
+
+</body>
+</html>

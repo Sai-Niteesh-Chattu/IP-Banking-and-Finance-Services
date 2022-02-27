@@ -1,0 +1,263 @@
+.navbar {
+    overflow: hidden;
+    background-color: green;
+}
+
+  /* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+  /* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+  /* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn{
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.dropdown:hover .dropbtn{
+   background-color: #ddd;
+    color: black;
+}
+
+
+.navbar .dropdown .dropdown-content{
+    position:absolute;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     background-color: #f9f9f9;
+     z-index: 1;
+     display: none;
+}
+
+.dropdown-content a{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover{
+   background-color: #ddd;
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.heading {
+  text-align: center;
+  font-size: 40px;
+  text-shadow: 2px 2px 5px black;
+}
+
+
+.container{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: black;
+    height: 270px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+}
+.container p{
+    font-size: 19px;
+}
+
+.container2{
+    background-color: rgba(255, 0, 0, 0.1);
+    color: black;
+    height: 270px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom:40px;
+}
+.container2 p{
+    font-size: 19px;
+}
+.container2 .service-1{
+    position:absolute;
+    left:700px;
+    top:520px;
+    height:200px;
+    width:200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container2 .service-1:hover{
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity:0.7;
+}
+.container2 .service-2{
+    position:absolute;
+    left:928px;
+    top:520px;
+    height:200px;
+    width:200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container2 .service-2:hover{
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity:0.7;
+}
+.container2 .service-3{
+    position:absolute;
+    left:1160px;
+    top:520px;
+    height:200px;
+    width:200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.container2 .service-3:hover{
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity:0.7;
+}
+
+
+.images img{
+    margin-bottom:40px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.images .image-1 {
+    height:200px;
+    width:300px;
+    position: absolute;
+    left:50px;
+}
+.images .image-1:hover{
+     transition: 0.3s;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     opacity:0.7;
+}
+
+.images .image-2{
+    height:200px;
+    width:300px;
+    position: absolute;
+    left:370px;
+}
+.images .image-2:hover{
+     transition: 0.3s;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     opacity:0.7;
+}
+.images .image-3{
+    height:200px;
+    width:300px;
+    position: absolute;
+    left:710px;
+}
+.images .image-3:hover{
+     transition: 0.3s;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     opacity:0.7;
+}
+.images .image-4{
+    height:200px;
+    width:300px;
+    position: absolute;
+    left:1050px;
+}
+.images .image-4:hover{
+     transition: 0.3s;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     opacity:0.7;
+}
+
+
+.footer{
+    background-color: Gray;
+    color: white;
+    height: 270px;
+    width:1403.5px;
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:1050px;
+}
+.footer .left{
+    background-color:Gray;
+    color:white;
+    height:270px;
+    width:701.75px;
+    position:absolute;
+    top:0px;
+}
+.footer .left span{
+    color:Orange;
+    font-size:1.3em ;
+}
+.footer .left a{
+    font-size: 1.5em;
+    color:Orange;
+    border-style:solid;
+    border-width:2px;
+    border-color:Orange;
+    padding-top:5px;
+    padding-left:7px;
+    padding-right:7px;
+    padding-bottom:5px;
+}
+.footer .left a:hover{
+    color:white;
+    transition:0.3s;
+    border-color:white;
+}
+
+.footer .right{
+    background-color:Gray;
+    color:white;
+    height:270px;
+    width:701.75px;
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+.footer .right ul a{
+    color:white;
+    font-size:1.3em;
+}
+.footer .right ul a:hover{
+    color:Orange;
+    transition:0.3s;
+    margin-left:10px;
+}

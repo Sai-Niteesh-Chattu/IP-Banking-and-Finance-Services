@@ -1,0 +1,69 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--Chart js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="{% static 'transchart.css' %}">
+    <link rel="stylesheet" type='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.css">
+    <title>Transaction Chart</title>
+</head>
+<body>
+
+    <div class="navbar">
+	    <a href="{% url 'transactions:t_history' %}">Transactions</a>
+	    <a href="{% url 'transactions:l_history' %}">Loans</a>
+	    <a href="{% url 'transactions:transchart' %}">Transaction Chart</a>
+	    <a href="{% url 'transactions:loanchart' %}">Loan Chart</a>
+	    <a href="/userlogout" class="right">Logout</a>
+    </div>
+
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+
+    <script>
+    $(document).ready(function(){
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [{% for item in qs %}"{{ item.timestamp__date }}",{% endfor %}],
+            datasets: [{
+                label: 'Daywise transfers',
+                data: [{% for item in qs %}{{ item.sum }},{% endfor %}],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    });
+</script>
+
+</body>
+</html>

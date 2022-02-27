@@ -1,0 +1,88 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+   <link rel="stylesheet" href="{% static 't_history.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <title>Transaction Report</title>
+</head>
+<body>
+
+    <div class="navbar">
+	    <a href="{% url 'transactions:t_history' %}">Transactions</a>
+	    <a href="{% url 'transactions:l_history' %}">Loans</a>
+	    <a href="{% url 'transactions:ds' %}">Transaction Chart</a>
+	    <a href="{% url 'transactions:loanchart' %}">Loan Chart</a>
+	    <a href="/userlogout" class="right">Logout</a>
+  </div>
+
+    <div class="container">
+    <h1 >Transaction Report</h1>
+
+    <form method="get">
+        <div class="searchbar">
+            <input class="bar" type="search" name="daterange" id="search" placeholder="Filter using date range" value="{{ request.GET.daterange }}"  />
+            <button class="glass" type="submit" >
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-6 h-6">
+                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </button>
+        </div>
+        {% if form.daterange.errors %}
+            {% for error in form.daterange.errors %}
+                <p >{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+    </form>
+    </div>
+    <table class="data">
+        <thead class="datahead">
+        <tr class="headrow">
+            <th >From User</th>
+            <th >Transaction Type</th>
+            <th >To User</th>
+            <th >Date</th>
+            <th >Amount</th>
+
+        </tr>
+        </thead>
+        <tbody class="databody">
+        {% for transaction in object_list %}
+        <tr class="bodyrow">
+            <td >{{ transaction.user_account_number }}</td>
+            <td >{{ transaction.transaction_type }}</td>
+            <td >{{ transaction.dest_account_number }}</td>
+            <td >{{ transaction.timestamp }}</td>
+            <td > {{ transaction.amount }}</td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+<script type="text/javascript">
+        $(function () {
+            $('input[name="daterange"]').daterangepicker({
+                autoUpdateInput: false,
+                locale: {
+                    cancelLabel: "Clear",
+                },
+            });
+
+            $('input[name="daterange"]').on("apply.daterangepicker", function (ev, picker) {
+                $(this).val(picker.startDate.format("YYYY-MM-DD") + " - " + picker.endDate.format("YYYY-MM-DD"));
+            });
+
+            $('input[name="daterange"]').on("cancel.daterangepicker", function (ev, picker) {
+                $(this).val("");
+            });
+        });
+    </script>
+
+</body>
+</html>

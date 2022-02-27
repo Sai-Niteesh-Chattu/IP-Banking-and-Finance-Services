@@ -1,0 +1,44 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>IP Registration</title>
+</head>
+<body>
+     <div class="navbar">
+  <a href="/">Home</a>
+  <a href="{% url 'about' %}">About</a>
+  <a href="/userlogin">Banking</a>
+  <a href="/userlogin">Finance</a>
+    <a href="{% url 'ourteam' %}">Our Team</a>
+  <a href="{% url 'userlogin' %}" class="right">Login/Signup</a>
+  </div>
+
+    <div class="container">
+        <p>SIGNUP</p>
+        <form action="{% url 'signup' %}" method="post" name="f2">
+            {% csrf_token %}
+
+            <input type="text" pattern="[0-9]{5}" title="Account number must be 5 digits" name="accno" placeholder="Account Number" required autofocus/><br/><br />
+            <input type="text" pattern="[0-9]{6}" title="IFSC Code must be 6 digits" name="ifsc_no" placeholder="IFSC Code" required /><br/><br />
+
+            <input type="text" name="username" placeholder="Username" required/><br /><br />
+            <input type="email" name="mail" placeholder="E-mail" required /><br/><br />
+            <select id="AccountType">
+                    <option value="Account Type" selected>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAccount Type</option>
+                    <option value="Savings Account">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSavings Account</option>
+                    <option value="Current Account">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCurrent Account</option>
+                </select><br><br>
+            <input type="password" name="pass" placeholder="password" required/><br /><br />
+            <input type="submit" value="SignUp">
+            <br />
+            <span>Already a user?</span><a href="{% url 'userlogin' %}">&nbsp;Login</a>
+            {{ form.errors }}
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'ds.css' %}">
+    <title>DataScience</title>
+</head>
+<body>
+
+    <div class="navbar">
+	    <a href="{% url 'transactions:t_history' %}">Transactions</a>
+	    <a href="{% url 'transactions:l_history' %}">Loans</a>
+	    <a href="{% url 'transactions:ds' %}">Transaction Chart</a>
+	    <a href="{% url 'transactions:loanchart' %}">Loan Chart</a>
+	    <a href="/userlogout" class="right">Logout</a>
+  </div>
+
+    {% if chart %}
+        <img src="data:image/png;base64, {{chart|safe}}">
+    {% endif %}
+
+</body>
+</html>

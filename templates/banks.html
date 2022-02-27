@@ -1,0 +1,93 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'banks.css'%}">
+    <title>IP Banks</title>
+</head>
+<body>
+
+        <div class="navbar">
+	<a href="/">Home</a>
+	<a href="{% url 'about' %}">About</a>
+	<a href="{% url 'userlogin' %}">Banking</a>
+	<a href="{% url 'userlogin' %}">Finance</a>
+    <a href="{% url 'ourteam' %}">Our Team</a>
+    <a href="{% url 'banks' %}">IP Banks</a>
+	<a href="{% url 'userlogin' %}" class="right">Login/Signup</a>
+  </div>
+        <p>IP Connected Banks</p>
+
+    <table class="data">
+        <thead class="datahead">
+        <tr class="headrow">
+            <th >Guntur</th>
+            <th >Vijayawada</th>
+            <th >Vizag</th>
+            <th >Hyderabad</th>
+            <th >Amaravathi</th>
+            <th >Kakinada</th>
+            <th >Machilipatnam</th>
+            <th >Secunderabad</th>
+
+        </tr>
+        </thead>
+        <tbody class="databody">
+
+        <tr class="bodyrow">
+            <td >SBI</td>
+            <td >SBI</td>
+            <td >SBI</td>
+            <td >SBI</td>
+            <td >SBI</td>
+            <td >SBI</td>
+            <td >SBI</td>
+            <td >SBI</td>
+        </tr>
+        <tr class="bodyrow">
+            <td >HDFC</td>
+            <td >HDFC</td>
+            <td >HDFC</td>
+            <td >HDFC</td>
+            <td >HDFC</td>
+            <td >HDFC</td>
+            <td >HDFC</td>
+            <td >HDFC</td>
+        </tr>
+        <tr class="bodyrow">
+            <td >AXIS</td>
+            <td >AXIS</td>
+            <td >AXIS</td>
+            <td >AXIS</td>
+            <td >AXIS</td>
+            <td >AXIS</td>
+            <td >AXIS</td>
+            <td >AXIS</td>
+        </tr>
+        <tr class="bodyrow">
+            <td >CANARA</td>
+            <td >CANARA</td>
+            <td >CANARA</td>
+            <td >CANARA</td>
+            <td >CANARA</td>
+            <td >CANARA</td>
+            <td >CANARA</td>
+            <td >CANARA</td>
+        </tr>
+        <tr class="bodyrow">
+            <td >UNION</td>
+            <td >UNION</td>
+            <td >UNION</td>
+            <td >UNION</td>
+            <td >UNION</td>
+            <td >UNION</td>
+            <td >UNION</td>
+            <td >UNION</td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

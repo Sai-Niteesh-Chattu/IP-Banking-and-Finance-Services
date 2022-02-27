@@ -1,0 +1,36 @@
+{% load static %}
+
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'changepwd.css' %}">
+    <title>Change Password</title>
+</head>
+<body>
+    <div class="navbar">
+	<a href="/">Home</a>
+	<a href="{% url 'about' %}">About</a>
+	<a href="/userlogin">Banking</a>
+	<a href="/userlogin">Finance</a>
+    <a href="{% url 'ourteam' %}">Our Team</a>
+	<a href="{% url 'userlogin' %}" class="right">Login/Signup</a>
+  </div>
+
+    <div class="container">
+        <p>Change Password</p>
+
+        <form method="post" action="{% url 'changepwd' %}">
+           {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter username" required autofocus><br><br>
+           <input type="password" name="opwd" placeholder="Enter Current password" required>
+           <br><br>
+           <input type="password" name="npwd" placeholder="Enter New password" required>
+           <br><br>
+           <input type="submit" value="Change">
+
+       </form>
+    </div>
+
+</body>
+</html>
